@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note And Coins Counter</title>
+</head>
+<style>
+    .main{
+        /* border:1px solid; */
+        height: fit-content;
+        width: 50%;
+        margin: auto;
+    }
+    #put{
+       height: 50px;
+        width: 270px;
+        font-size: 40px;
+        text-align: center;
+        margin: 5px 10px;
+        text-shadow: 1px 1px 2px rgb(255, 230, 0);
+
+    }
+    #put:hover{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 1px 2px 2px black;
+    }
+    #put:focus{
+        outline: 100px;
+    }
+    #cli{
+        height: 50px;
+        width: 100px;
+        font-size: 20px;
+        border: none;
+        border-radius: 10%;
+        background-color: aqua;
+        color:brown;
+        margin: 0px 100px;
+        box-shadow: 1px 1px 5px rgb(255, 255, 255);
+    }
+    #cli:hover{
+        background-color: rgb(191, 255, 255);
+        box-shadow: 1px 1px 2px black;
+        text-shadow: 1px 1px 2px rgb(255, 230, 0);
+    }
+    .lower{
+        height: fit-content;
+        width: 70%;
+        border: solid 1px;
+        margin: auto;
+        font-size: 30px;
+        text-align: center;
+        display: none;
+    }
+</style>
+<body>
+    <div class="main">
+        <input type="number" id="put">
+        <button id="cli">Check</button>
+    </div>
+    <div class="lower">
+        <p id="print"></p>
+        <p>2000 : <span id="p2000"></span> </p>
+        <p>500 : <span id="p500"></span> </p>
+        <p>100 : <span id="p100"></span> </p>
+        <p>50 : <span id="p50"></span> </p>
+        <p>20 : <span id="p20"></span> </p>
+        <p>10 : <span id="p10"></span> </p>
+        <p>5 : <span id="p5"></span> </p>
+        <p>2 : <span id="p2"></span> </p>
+        <p>1 : <span id="p1"></span> </p>
+    </div>
+    <script>
+        let a = document.querySelector("#put")
+        let b = document.querySelector("#cli")
+        let pth = document.querySelector("#p2000")
+        let pfh = document.querySelector("#p500")
+        let p100 = document.querySelector("#p100")
+        let p50 = document.querySelector("#p50")
+        let p20 = document.querySelector("#p20")
+        let p10 = document.querySelector("#p10")
+        let p5 = document.querySelector("#p5")
+        let p2 = document.querySelector("#p2")
+        let p1 = document.querySelector("#p1")
+        b.addEventListener("click",()=>{
+            document.getElementsByClassName("lower")[0].style.display = "block"
+            document.getElementById("print").innerText +=`AMOUNT ${a.value} Rs`
+
+        pth.innerHTML = 0
+        pfh.innerHTML = 0
+        p100.innerHTML = 0
+        p50.innerHTML = 0
+        p20.innerHTML = 0
+        p10.innerHTML= 0
+        p5.innerHTML = 0
+        p2.innerHTML = 0
+        p1.innerHTML = 0
+          if(Math.floor(a.value / 2000) || a <= 2000 ){
+          var k = Math.floor(a.value / 2000) 
+            pth.innerHTML = k
+            if(a.value >= 2000){
+                a.value = a.value % 2000
+            }
+          } 
+          if(Math.floor(a.value / 500) || a <= 500){
+            var k = Math.floor(a.value / 500) 
+            pfh.innerHTML = k
+            if(a.value >= 500){
+                a.value = a.value % 500
+            }
+          }
+          if(Math.floor(a.value / 100) || a <= 100){
+            var k = Math.floor(a.value / 100) 
+            p100.innerHTML = k
+            if(a.value >= 100){
+                a.value = a.value % 100
+            }
+          }
+          if(Math.floor(a.value / 50) || a <= 50){
+            var k = Math.floor(a.value / 50) 
+            p50.innerHTML = k
+            if(a.value >= 50){
+                a.value = a.value % 50
+            }
+          }
+          if(Math.floor(a.value / 20) || a <= 20){
+            var k = Math.floor(a.value / 20) 
+            p20.innerHTML = k
+            if(a.value >= 20){
+                a.value = a.value % 20
+            }
+          }
+          if(Math.floor(a.value / 10) || a <= 10){
+            var k = Math.floor(a.value / 10) 
+            p10.innerHTML = k
+            if(a.value >= 10){
+                a.value = a.value % 10
+            }
+          }
+          if(Math.floor(a.value / 5) || a <= 5){
+            var k = Math.floor(a.value / 5) 
+            p5.innerHTML = k
+            if(a.value >= 5){
+                a.value = a.value % 5
+            }
+          }
+          if(Math.floor(a.value / 2) || a <= 2){
+            var k = Math.floor(a.value / 2) 
+            p2.innerHTML = k
+            if(a.value >= 2){
+                a.value = a.value % 2
+            }
+          }
+          if(Math.floor(a.value / 1) || a <= 1){
+            var k = Math.floor(a.value / 1) 
+            p1.innerHTML = k
+            if(a.value >= 1){
+                a.value = a.value % 1
+            }
+          }
+          document.getElementsByClassName("main")[0].style.display = "none"
+        })
+    </script>
+</body>
+</html>
